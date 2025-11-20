@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>[Your Name] — AI Research</title>
-  <meta name="description" content="Academic homepage: AI research, publications, and projects." />
+  <title>Jinsu Kim — AI Research</title>
+  <meta name="description" content="Academic homepage of Jinsu Kim: AI research, publications, and projects." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
     h1 { font-size: 2.2rem; font-weight: 700; margin: 0 0 8px 0; letter-spacing: -0.02em; }
     .role { font-size: 1.1rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; }
     
-    /* 프로필 이미지 (없으면 주석 처리하거나 src를 비우세요) */
+    /* 프로필 이미지 (이미지가 없으면 아래 img 태그를 지우세요) */
     .profile-img img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 2px solid var(--line); background: var(--line); }
 
     /* 소셜 버튼 */
@@ -58,7 +58,7 @@
     section { margin-bottom: 64px; scroll-margin-top: 80px; }
     .section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 700; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 12px; }
     
-    /* --- 카드 스타일 (Highlights, Projects) --- */
+    /* --- 카드 스타일 --- */
     .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     .card { border: 1px solid var(--line); border-radius: 12px; padding: 20px; background: var(--card-bg); transition: transform 0.2s; }
     .card:hover { transform: translateY(-2px); border-color: var(--accent); }
@@ -72,6 +72,12 @@
     .pub-meta { font-size: 0.9rem; color: var(--muted); display: block; margin: 4px 0 6px; }
     .pub-links a { font-size: 0.85rem; margin-right: 10px; color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 
+    /* --- 어워드 리스트 --- */
+    .award-list { list-style: none; padding: 0; }
+    .award-list li { display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 12px; }
+    .award-name { font-weight: 600; }
+    .award-year { color: var(--muted); font-variant-numeric: tabular-nums; }
+
     footer { margin-top: 80px; padding-top: 40px; border-top: 1px dashed var(--line); font-size: 0.85rem; color: var(--muted); text-align: center; }
   </style>
 </head>
@@ -81,17 +87,18 @@
     
     <header>
       <div class="profile-text">
-        <h1>[Your Name]</h1>
-        <div class="role">PhD Student in AI @ [University]</div>
-        <p style="color: var(--muted); max-width: 480px;">
-          I research <strong>Large Language Models</strong>, focusing on <em>efficiency</em> and <em>robustness</em>. 
-          Creating personalized and trustworthy AI systems.
+        <h1>Jinsu Kim</h1>
+        <div class="role">MS/PhD Candidate @ Korea University</div>
+        <p style="color: var(--muted); max-width: 520px;">
+          I am an MS/PhD candidate at Korea University, advised by Prof. Jongheon Jeong. 
+          I work on AI safety for generative models, especially large language models and diffusion models.
+          My research focuses on adversarial robustness, effective use of external knowledge, and mitigating misalignment with human values in rare or unexpected scenarios.
         </p>
         <div class="social-links">
           <a href="/cv.pdf" class="btn">CV (PDF)</a>
-          <a href="mailto:email@uni.edu" class="btn outline">Email</a>
+          <a href="mailto:tonmmy222@korea.ac.kr" class="btn outline">Email</a>
           <a href="https://scholar.google.com/" class="btn outline">Scholar</a>
-          <a href="https://github.com/" class="btn outline">GitHub</a>
+          <a href="https://github.com/jsu-kim" class="btn outline">GitHub</a>
         </div>
       </div>
       <div class="profile-img">
@@ -102,6 +109,7 @@
     <nav>
       <a href="#highlights">Highlights</a>
       <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -110,13 +118,14 @@
       <div class="section-title">Highlights</div>
       <div class="grid">
         <div class="card">
-          <div style="color:var(--accent); font-weight:bold; font-size:0.8rem; margin-bottom:4px;">NEW!</div>
-          <h3>New Paper at NeurIPS</h3>
-          <p>Our work on "Robust Persona Vectors" was accepted. <a href="#">[Read]</a></p>
-        </div>
-        <div class="card">
-          <h3>Internship Search</h3>
-          <p>Looking for research roles for Summer 2026.</p>
+          <div style="color:var(--accent); font-weight:bold; font-size:0.8rem; margin-bottom:4px;">NeurIPS 2025</div>
+          <h3>BlurGuard (Poster) Accepted</h3>
+          <p>
+            "BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Editing"
+            <br>
+            <a href="https://arxiv.org/abs/2511.00143">[Paper]</a> 
+            <a href="https://github.com/jsu-kim/BlurGuard">[Code]</a>
+          </p>
         </div>
       </div>
     </section>
@@ -124,19 +133,41 @@
     <section id="publications">
       <div class="section-title">Selected Publications</div>
       <ul class="pub-list">
+        
         <li class="pub-item">
-          <span class="pub-title">Title of Your Paper</span>
-          <span class="pub-meta"><strong>[Your Name]</strong>, Co-author — Conference Name (2025)</span>
+          <span class="pub-title">BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Editing</span>
+          <span class="pub-meta">
+            <strong>Jinsu Kim</strong>, Yunhun Nam, Minseon Kim, Sangpil Kim, Jongheon Jeong
+            <br>
+            <em>NeurIPS 2025 (Poster)</em>
+          </span>
           <div class="pub-links">
-            <a href="#">Paper</a> <a href="#">Code</a> <a href="#">BibTeX</a>
+            <a href="https://arxiv.org/abs/2511.00143">Paper</a> 
+            <a href="https://github.com/jsu-kim/BlurGuard">Code</a>
           </div>
         </li>
+
         <li class="pub-item">
-          <span class="pub-title">Another Interesting Paper</span>
-          <span class="pub-meta"><strong>[Your Name]</strong>, Co-author — arXiv preprint</span>
+          <span class="pub-title">ECoRAG: Evidentiality-guided Compression for Long Context RAG</span>
+          <span class="pub-meta">
+            Yeonseok Jeong, <strong>Jinsu Kim</strong>, Dohyeon Lee, Seung-won Hwang
+            <br>
+            <em>arXiv preprint (2025)</em>
+          </span>
           <div class="pub-links">
-            <a href="#">PDF</a> <a href="#">Project Page</a>
+            <a href="https://arxiv.org/abs/2506.05167">Paper</a>
           </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="awards">
+      <div class="section-title">Honors & Awards</div>
+      <ul class="award-list">
+        <li>
+          <span class="award-name">Scholar Award (Travel Grant)</span>
+          <span class="award-year">NeurIPS 2025</span>
         </li>
       </ul>
     </section>
@@ -146,15 +177,7 @@
       <div class="grid">
         <div class="card">
           <h3>BlurGuard</h3>
-          <p>Adversarial protection against diffusion editing.</p>
-        </div>
-        <div class="card">
-          <h3>Persona Vectors</h3>
-          <p>Steering LLMs with linear directions. <a href="#">[Demo]</a></p>
-        </div>
-        <div class="card">
-          <h3>Model Pruning Toolkit</h3>
-          <p>Efficient pruning workflows for LLMs.</p>
+          <p>A Simple Approach for Robustifying Image Protection Against AI-Powered Editing. <a href="https://github.com/jsu-kim/BlurGuard">[Code]</a></p>
         </div>
       </div>
     </section>
@@ -162,13 +185,12 @@
     <section id="contact">
       <div class="section-title">Contact</div>
       <p style="color:var(--muted)">
-        Email: <a href="mailto:[name]@uni.edu" style="text-decoration:underline">[name]@uni.edu</a><br>
-        Office: [Building Name, Room 101]
+        Email: <a href="mailto:tonmmy222@korea.ac.kr" style="text-decoration:underline; color:var(--accent);">tonmmy222@korea.ac.kr</a>
       </p>
     </section>
 
     <footer>
-      © <span id="year"></span> [Your Name].
+      © <span id="year"></span> Jinsu Kim.
     </footer>
   </div>
 
